@@ -3,7 +3,7 @@ import requests
 import os
 
 while True:
-    os.system("clear")   
+    os.system("clear")   #clear screen
     print("Getting a new quote...")
     result = requests.get(f"https://meowfacts.herokuapp.com/?count=1").json()
     quote = result["data"][0]
