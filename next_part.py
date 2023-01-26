@@ -54,7 +54,7 @@ def view_all_students ():
     for elements in all_data:
         print(f"{elements['roll']} - {elements['f_name']} - {elements['l_name']} - {elements['class']} - {elements['fee']}")
         print()
-    input()
+    input("Press any key to go Back")
 
 def add_new_student ():
     os.system('cls')
@@ -77,7 +77,7 @@ def add_new_student ():
     all_data.append(student)
     os.system('cls')
     print(f"The Student {student['f_name']} is added Successfully ")
-    input()
+    input("Press any key to go Back")
 
 def edit_student():
     os.system('cls')
@@ -85,62 +85,64 @@ def edit_student():
     x = 0
     for students in all_data:
         if  all_data[x]['roll'] == given_roll:
-            os.system('cls')
-            print("********************** Here is your Data *****************************")
-            print()
-            print(f" Name: {all_data[x]['f_name']} {all_data[x]['l_name']} -- Class: {all_data[x]['class']} --DOB: {all_data[x]['dofbirth']} -- Roll No: {all_data[x]['roll']} -- Fees: {all_data[x]['fee']}")
-            print()
-            print("Which Element You want to Change:")
-            print()
-            print("1: First Name")
-            print("2: Last Name")
-            print("3: Class")
-            print("4: DOB")
-            print("5: Roll No")
-            print("6: Fee")
-            print("0: Exit")
-            choice_ =int(input("Enter Your Choice: "))
-            if choice_ == 1:
+            while True:
                 os.system('cls')
-                new_f_name = input("Enter Your New First Name: ")
-                all_data[x]['f_name'] = new_f_name
-                print(" YOUR FIRST NAME HAS BEEN CHANGED SUCCESSFULLY")
-                input()
-            elif choice_ == 2:
-                os.system('cls')
-                new_l_name = input("Enter Your New Last Name: ")
-                all_data[x]['l_name'] = new_l_name
-                print(" YOUR LAST NAME HAS BEEN CHANGED SUCCESSFULLY")
-                input()
-            elif choice_ == 3:
-                os.system('cls')
-                new_class_name = input("Enter Your New Class Name: ")
-                all_data[x]['class'] = new_class_name
-                print(" YOUR CLASS HAS BEEN CHANGED SUCCESSFULLY")
-                input()
-            elif choice_ == 4:
-                os.system('cls')
-                new_dob = int(input("Enter Your New Date of Birth: "))
-                all_data[x]['dofbirth'] = new_dob
-                print(" YOUR DATE OF BIRTH HAS BEEN CHANGED SUCCESSFULLY")
-                input()
-            elif choice_ == 5:
-                os.system('cls')
-                new_roll = int(input("Enter Your New Roll Number: "))
-                all_data[x]['roll'] = new_roll
-                print(" YOUR ROLL NUMBER HAS BEEN CHANGED SUCCESSFULLY")
-                input()
-            elif choice_ == 6:
-                os.system('cls')
-                new_fee = int(input("Enter Your New Fee: "))
-                all_data[x]['fee'] = new_fee
-                print(" YOUR FEE HAS BEEN CHANGED SUCCESSFULLY")
-                input()
-            elif choice_ == 0:
-                exit
-            else:
-                os.system('cls')
-                print("Invalid Choice")
+                print("********************** Here is your Data *****************************")
+                print()
+                print(f" Name: {all_data[x]['f_name']} {all_data[x]['l_name']} -- Class: {all_data[x]['class']} --DOB: {all_data[x]['dofbirth']} -- Roll No: {all_data[x]['roll']} -- Fees: {all_data[x]['fee']}")
+                print()
+                print("Which Element You want to Change:")
+                print()
+                print("1: First Name")
+                print("2: Last Name")
+                print("3: Class")
+                print("4: DOB")
+                print("5: Roll No")
+                print("6: Fee")
+                print("0: Exit")
+                choice_ =int(input("Enter Your Choice: "))
+                if choice_ == 1:
+                    os.system('cls')
+                    new_f_name = input("Enter Your New First Name: ")
+                    all_data[x]['f_name'] = new_f_name
+                    print(" YOUR FIRST NAME HAS BEEN CHANGED SUCCESSFULLY")
+                    input("Press any Key to Go Back")
+                elif choice_ == 2:
+                    os.system('cls')
+                    new_l_name = input("Enter Your New Last Name: ")
+                    all_data[x]['l_name'] = new_l_name
+                    print(" YOUR LAST NAME HAS BEEN CHANGED SUCCESSFULLY")
+                    input("Press any Key to Go Back")
+                elif choice_ == 3:
+                    os.system('cls')
+                    new_class_name = input("Enter Your New Class Name: ")
+                    all_data[x]['class'] = new_class_name
+                    print(" YOUR CLASS HAS BEEN CHANGED SUCCESSFULLY")
+                    input("Press any Key to Go Back")
+                elif choice_ == 4:
+                    os.system('cls')
+                    new_dob = int(input("Enter Your New Date of Birth: "))
+                    all_data[x]['dofbirth'] = new_dob
+                    print(" YOUR DATE OF BIRTH HAS BEEN CHANGED SUCCESSFULLY")
+                    input("Press any Key to Go Back")
+                elif choice_ == 5:
+                    os.system('cls')
+                    new_roll = int(input("Enter Your New Roll Number: "))
+                    all_data[x]['roll'] = new_roll
+                    print(" YOUR ROLL NUMBER HAS BEEN CHANGED SUCCESSFULLY")
+                    input("Press any Key to Go Back")
+                elif choice_ == 6:
+                    os.system('cls')
+                    new_fee = int(input("Enter Your New Fee: "))
+                    all_data[x]['fee'] = new_fee
+                    print(" YOUR FEE HAS BEEN CHANGED SUCCESSFULLY")
+                    input("Press any Key to Go Back")
+                elif choice_ == 0:
+                    os.system('cls')
+                    break
+                else:
+                    os.system('cls')
+                    print("Invalid Choice")
 
         x += 1
 
@@ -160,16 +162,16 @@ def expell_student ():
             os.system('cls')
             all_data.pop(x)
             print(f"Roll Number : {for_expel} has been Expelled")
-            input()
+            input("Press any Key to Go Back")
         elif student_want == 'n':
             os.system('cls')
             print("Ok")
-            input()
+            input("Press any Key to Go Back")
             break
         else:
             os.system('cls')
             print("Invalid Choice")
-            input()
+            input("Press any Key to Go Back")
      
      x += 1
 
@@ -183,7 +185,7 @@ def search_student ():
         print("**********************   Here is your Data   *****************************")
         print()
         print(f" Name: {all_data[x]['f_name']} {all_data[x]['l_name']} -- Class: {all_data[x]['class']} --DOB: {all_data[x]['dofbirth']} -- Roll No: {all_data[x]['roll']} -- Fees: {all_data[x]['fee']}")
-        input()
+        input("Press any Key to Go Back")
     
      x += 1
     
